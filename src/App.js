@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import NumSystemTable from './NumSystemTable';
 import { Grid, Row, Col, Table } from 'react-bootstrap';
 
 class App extends Component {
@@ -43,6 +43,11 @@ class App extends Component {
                   </tr>
                 </tbody>
               </Table>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={12}>
+              <NumSystemTable />
             </Col>
           </Row>
          </Grid>
