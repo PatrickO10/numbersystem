@@ -4,11 +4,11 @@ export const numberSystem = {
         '01': { num: '01', initials: 'OA', name: 'Oakley Annie', action: 'shooting gun', object: 'target' },
         '02': { num: '02', initials: 'OB', name: 'Orlando Bloom', action: 'shooting bow', object: 'arrow' },
         '03': { num: '03', initials: 'OC', name: 'Original Content', action: 'posting', object: 'meme' },
-        '04': { num: '04', initials: 'OD', name: 'Over Dose', action: 'injecting', object: 'needle' },
+        '04': { num: '04', initials: 'OD', name: 'Over Dose (Chris Farley)', action: 'injecting', object: 'needle' },
         '05': { num: '05', initials: 'OE', name: 'Omar Epps', action: 'hitchhiking', object: 'towel' },
         '06': { num: '06', initials: 'OS', name: 'Of Shire (Frodo)', action: 'stabbing', object: 'orc' },
         '07': { num: '07', initials: 'OG', name: 'Oscar Grouch', action: 'popping-out', object: 'trash can' },
-        '08': { num: '08', initials: 'OH', name: 'Of Havana', action: 'singing with', object: 'microphone' },
+        '08': { num: '08', initials: 'OH', name: 'Of Havana (Camila Cabello)', action: 'singing with', object: 'microphone' },
         '09': { num: '09', initials: 'ON', name: 'Oscar Nunez', action: 'calculating with', object: 'calculator' }
     },
     'pao10-19': {

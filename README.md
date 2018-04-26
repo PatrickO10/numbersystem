@@ -35,7 +35,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 2. **SearchBar (blue):** receives all user input
 3. **PAOTable (green):** displays and filters the data collection based on user input
 4. **PAOCategoryRow (turquoise):** displays a heading for each category
-5. **PAORow (red):** displays a row for each project
+5. **PAORow (red):** displays a row for each PAO
 
 
 ### Component Hierarchy:
@@ -81,22 +81,22 @@ State should only be used for interactivity, aka data that changes over time.
 > For example, if you’re building a TODO list, just keep an array of the TODO items around; don’t keep a separate state variable for the count. Instead, when you want to render the TODO count, simply take the length of the TODO items array.
 > 
 #### All the pieces of Data in the application:
-- The original list of projects
+- The original list of PAO
 - The search text the user has entered
-- The filtered list of projects
+- The filtered list of PAO
 
 #### Go through each one and figure out which one is state by asking three questions about each piece of data:
 1. Is it passed in from a parent via props? If so, it probably isn't state.
 2. Does it remain unchanged over time? If so, it probably isn't state.
 3. Can you compute it based on any other state or props in your component? If so, it isn't state.
 
-* The original list of pao (**not state**)
+* The original list of PAO (**not state**)
   - passed in as props 
 * The search text (**state**)
   - changes over time
   - cannot be computed from anything
-* The filtered list of pao (**not state**)
-  - can be computed by combining the original list of projects with the search text.
+* The filtered list of PAO (**not state**)
+  - can be computed by combining the original list of PAO with the search text.
 
 **State:**
 * The search text the user has entered
