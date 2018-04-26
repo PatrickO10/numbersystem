@@ -11,7 +11,7 @@ class NumSystemTable extends Component {
         			<SearchBar />
         		</Col>
         		<Col xs={12}>
-        			<PAOTable />
+        			<PAOTable numberSystem={this.props.numberSystem}/>
         		</Col>
         	</Row>
         )

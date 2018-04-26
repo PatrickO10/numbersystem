@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
 import NumSystemTable from './NumSystemTable';
+import * as data from './utils/data'
 import { Grid, Row, Col, Table } from 'react-bootstrap';
 
 class App extends Component {
     render() {
         return (
-          <div className="App">
           <Grid>
-            <Row className="App-header">
+            <Row className="App">
               <Col className="App-title" xs={12}>
                 <h1> Number System</h1>
               </Col>
-            <Col xs={12} md={4}>
+              <Col xs={12} md={4}>
               <Table bordered condensed hover>
                 <tbody>
                   <tr>
@@ -44,14 +44,16 @@ class App extends Component {
                 </tbody>
               </Table>
             </Col>
+            <Col xs={12} md={8}>
+              <h3>PERSON ACTION OBJECT</h3>
+            </Col>
           </Row>
           <Row>
             <Col xs={12}>
-              <NumSystemTable />
+              <NumSystemTable numberSystem={data.numberSystem} />
             </Col>
           </Row>
          </Grid>
-        </div>
         );
     }
 }
