@@ -1,14 +1,35 @@
-import React, { Component } from 'react';
-import './App.css';
-import NumSystemTable from './NumSystemTable';
+import React, { Component } from 'react'
+import { Route } from 'react-router-dom'
+import './App.css'
+import NumSystemTable from './NumSystemTable'
+import CreateUser from './CreateUser'
 import * as data from './utils/data'
-import { Grid, Row, Col, Table } from 'react-bootstrap';
+import * as firebaseAPI from './utils/firebaseAPI'
+import * as personSVG from './icons/person-add.svg'
+import { Grid, Row, Col, Table, Button } from 'react-bootstrap'
+
+
 
 class App extends Component {
+
+    state = {
+      users: []
+    }
+
+    createUser(user) {
+      firebaseAPI.createUser(user)
+    }
+
+    handleClick() {
+      console.log('sign out')
+    }
+
     render() {
         return (
           <Grid>
-            <Row className="App">
+          <Route exact path='/' render={() => (
+<Row className="App">
+            <Row>
               <Col className="App-title" xs={12}>
                 <h1> Number System</h1>
               </Col>
@@ -44,8 +65,28 @@ class App extends Component {
                 </tbody>
               </Table>
             </Col>
-            <Col xs={12} md={8}>
+            <Col xs={12} md={4}>
               <h3>PERSON ACTION OBJECT</h3>
+            </Col>
+            <Col xs={12} md={4}>
+              <Row>
+                <Col xs={12} md={3}>
+                  <Button
+                    active
+                    bsStyle="primary"
+                    onClick={this.handleClick}
+                  >
+                    <h5>Sign Out</h5>
+                  </Button>
+                </Col>
+                <Col xs={12} md={3}>
+                  <Button active><h5>Sign In</h5></Button>
+                </Col>
+                <Col xs={12} md={3}>
+
+                  <Button active><img src={personSVG} width="28px" alt="plus sign with person" />Create an Account</Button>
+                </Col>
+              </Row>
             </Col>
           </Row>
           <Row>
@@ -53,6 +94,21 @@ class App extends Component {
               <NumSystemTable numberSystem={data.numberSystem} />
             </Col>
           </Row>
+          </Row>
+
+          )}/>
+          <Route path='/create-user' render={({ history }) => (
+            <Row>
+            <CreateUser
+              onCreateUser={(user) => {
+                this.createUser(user)
+                history.push('/')
+              }}
+            />
+            </Row>
+          )}/>
+
+
          </Grid>
         );
     }

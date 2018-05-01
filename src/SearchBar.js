@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
-import { Form, FormGroup, FormControl, Button, ControlLabel } from 'react-bootstrap'
+import * as searchSVG from './icons/search.svg'
+import { Form, FormGroup, FormControl, Button } from 'react-bootstrap'
 
 class SearchBar extends Component {
 
-	updateTextChange(e) {
-		let textValue = e.target.value;
+    updateTextChange(e) {
+        let textValue = e.target.value;
+        if (this.props.onFilterTextChange)
+            this.props.onFilterTextChange(textValue);
+    }
 
-		this.props.onFilterTextChange(textValue);
-	}
+    render() {
+        const filterText = this.props.filterText;
 
-	render() {
-		const filterText = this.props.filterText;
-
-		return (
-			<Form inline>
+        return (
+            <Form inline>
 				<FormGroup controlId="formSearch">
-					<ControlLabel>Search</ControlLabel>{' '}
 					<FormControl
 						type="text"
 						placeholder="Search..."
@@ -23,10 +23,10 @@ class SearchBar extends Component {
 						onChange={(evt) => {this.updateTextChange(evt)}}
 					/>
 				</FormGroup>
-  				<Button type="submit">Send</Button>
+  				<Button type="submit" active><img src={searchSVG} width="28px" alt="magnifying glass" /></Button>
 			</Form>
-		)
-	}
+        )
+    }
 }
 
 export default SearchBar
