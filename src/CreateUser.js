@@ -9,7 +9,6 @@ class CreateUser extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         const values = serializeForm(e.target, { hash: true })
-        console.log(values)
         if (this.props.onCreateUser)
             this.props.onCreateUser(values)
     }
@@ -21,6 +20,12 @@ class CreateUser extends Component {
 
         <Form inline onSubmit={this.handleSubmit}>
           <FormGroup controlId='formCreateUser'>
+            <ControlLabel>User Name</ControlLabel>
+              <FormControl
+                type='text'
+                name='username'
+                placeholder='user name'
+              />
             <ControlLabel>Email</ControlLabel>{' '}
               <FormControl
                 type='text'

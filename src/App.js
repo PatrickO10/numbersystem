@@ -34,8 +34,9 @@ class App extends Component {
         return (
           <Grid>
           <Route exact path='/' render={() => (
-<Row className="App">
-            <Row>
+            <div>
+            <Row className="App">
+
               <Col className="App-title" xs={12}>
                 <h1> Number System</h1>
               </Col>
@@ -106,7 +107,8 @@ class App extends Component {
               <NumSystemTable numberSystem={data.numberSystem} />
             </Col>
           </Row>
-          </Row>
+          </div>
+
 
           )}/>
           <Route path='/create-user' render={({ history }) => (
