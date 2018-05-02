@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import './App.css'
 import NumSystemTable from './NumSystemTable'
 import CreateUser from './CreateUser'
+import SignIn from './SignIn'
 import * as data from './utils/data'
 import * as firebaseAPI from './utils/firebaseAPI'
 import * as personSVG from './icons/person-add.svg'
@@ -20,8 +21,13 @@ class App extends Component {
       firebaseAPI.createUser(user)
     }
 
+    signIn(user) {
+      firebaseAPI.signIn(user)
+    }
+
     handleClick() {
       console.log('sign out')
+      firebaseAPI.signOut()
     }
 
     render() {
@@ -66,12 +72,13 @@ class App extends Component {
               </Table>
             </Col>
             <Col xs={12} md={4}>
-              <h3>PERSON ACTION OBJECT</h3>
+              <h3>PERSON - ACTION - OBJECT</h3>
             </Col>
             <Col xs={12} md={4}>
               <Row>
                 <Col xs={12} md={3}>
                   <Button
+                    type="button"
                     active
                     bsStyle="primary"
                     onClick={this.handleClick}
@@ -80,11 +87,16 @@ class App extends Component {
                   </Button>
                 </Col>
                 <Col xs={12} md={3}>
-                  <Button active><h5>Sign In</h5></Button>
+                  <Link to='/signin'>
+                    <Button type="button" active><h5>Sign In</h5></Button>
+                  </Link>
                 </Col>
                 <Col xs={12} md={3}>
 
-                  <Button active><img src={personSVG} width="28px" alt="plus sign with person" />Create an Account</Button>
+                  <Link to='/create-user'>
+                    <Button type="button" active><img src={personSVG} width="28px" alt="plus sign with person" />Create an Account</Button>
+                  </Link>
+
                 </Col>
               </Row>
             </Col>
@@ -106,6 +118,18 @@ class App extends Component {
               }}
             />
             </Row>
+          )}/>
+
+          <Route path='/signIn' render={({ history }) => (
+            <Row>
+              <SignIn
+                onSignIn={(user) => {
+                  this.signIn(user)
+                  history.push('/')
+                }}
+              />
+            </Row>
+
           )}/>
 
 
