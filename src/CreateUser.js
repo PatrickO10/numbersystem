@@ -15,16 +15,17 @@ class CreateUser extends Component {
 
     render() {
         return (
-            <div>
-        <Link className='close-create-user' to='/'>Close</Link>
+            <div className='flex-container'>
 
-        <Form inline onSubmit={this.handleSubmit}>
+
+        <Form className='form-style' onSubmit={this.handleSubmit}>
+          <Link className='close-create-user' to='/'>Close</Link>
           <FormGroup controlId='formCreateUser'>
             <ControlLabel>User Name</ControlLabel>
               <FormControl
                 type='text'
                 name='username'
-                placeholder='user name'
+                placeholder='User Name'
               />
             <ControlLabel>Email</ControlLabel>{' '}
               <FormControl

@@ -9,16 +9,16 @@
   font-size: 1.5em;
 }
 
-.signin-flex-container {
+.flex-container {
 	display: flex;
 	align-items: center;
 	padding: 48px 0;
 	background-color: #E4E5E5;
 }
 
-.form-signin {
+.form-style {
 	width: 100%;
-    padding: 15px;
+    padding: 5px;
     margin: 0 auto;
     max-width: 330px;
 }
