@@ -8,3 +8,21 @@
 .App-title {
   font-size: 1.5em;
 }
+
+.signin-flex-container {
+	display: flex;
+	align-items: center;
+	padding: 48px 0;
+	background-color: #E4E5E5;
+}
+
+.form-signin {
+	width: 100%;
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 330px;
+}
+
+.signin-button {
+	margin-top: 15px;
+}
