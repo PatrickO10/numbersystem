@@ -16,10 +16,10 @@ class CreateUser extends Component {
     render() {
         return (
             <div className='flex-container'>
-
+        <Link className='go-back-arrow' to='/'>Close</Link>
 
         <Form className='form-style' onSubmit={this.handleSubmit}>
-          <Link className='close-create-user' to='/'>Close</Link>
+
           <FormGroup controlId='formCreateUser'>
             <ControlLabel>User Name</ControlLabel>
               <FormControl

@@ -23,8 +23,9 @@ class SignIn extends Component {
     render() {
         return (
             <div className='text-center flex-container'>
+            <Link className='go-back-arrow' to='/'>Close</Link>
                 <Form className='form-style' onSubmit={this.handleSubmit}>
-                    <Link className='close-sign-in' to='/'>Close</Link>
+
 
                     <Image src="http://placeholder.pics/svg/200x180"  width="300px" alt="Avocado" rounded responsive/>
                     <h3>Sign In Please</h3>

@@ -26,3 +26,11 @@
 .signin-button {
 	margin-top: 15px;
 }
+
+.go-back-arrow {
+  display: block;
+  width: 75px;
+  height: 75px;
+  background: no-repeat center/30px url('./icons/arrow-back.svg');
+  font-size: 0;
+}

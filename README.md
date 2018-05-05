@@ -84,6 +84,7 @@ State should only be used for interactivity, aka data that changes over time.
 - The original list of PAO
 - The search text the user has entered
 - The filtered list of PAO
+- The user
 
 #### Go through each one and figure out which one is state by asking three questions about each piece of data:
 1. Is it passed in from a parent via props? If so, it probably isn't state.
@@ -97,9 +98,13 @@ State should only be used for interactivity, aka data that changes over time.
   - cannot be computed from anything
 * The filtered list of PAO (**not state**)
   - can be computed by combining the original list of PAO with the search text.
+* The user
+  - changes over time
+  - cannot be comptued from anything
 
 **State:**
 * The search text the user has entered
+* The user
 
 ---
 
